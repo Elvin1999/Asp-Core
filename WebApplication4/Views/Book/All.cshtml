@@ -1,0 +1,17 @@
+﻿@model IList<WebApplication4.Models.Book>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <p>Total books : @Model.Count</p>
+    <ul>
+       @foreach(var item in Model)
+       {
+           <li>Id: @item.Id Title: @item.Title Year:@item.Year</li>
+       }
+    </ul>
+</body>
+</html>
