@@ -11,11 +11,13 @@ namespace WebApplication4.Services
         private readonly IList<Book> _books;
         public Book AddBook(int year, string title)
         {
-            var book = new Book() { 
-            Id=_books.Count+1,
-             Title=title,
-              Year=year
+            var book = new Book()
+            {
+                Id = _books.Count + 1,
+                Title = title,
+                Year = year
             };
+            _books.Add(book);
             return book;
         }
         public BookService()

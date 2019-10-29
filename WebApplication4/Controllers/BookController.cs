@@ -28,5 +28,10 @@ namespace WebApplication4.Controllers
             }).ToList();
             return View(bookViewModels);
         }
+        public IActionResult Add(string title,int year)
+        {
+            _bookService.AddBook(year,title);
+            return new RedirectToActionResult("All", "Book", null);
+        }
     }
 }
