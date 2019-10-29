@@ -1,4 +1,4 @@
-﻿@model IList<WebApplication4.Models.Book>
+﻿@model IList<WebApplication4.ViewModels.BookViewModel>
 <html>
 
 <head>
@@ -10,7 +10,7 @@
     <ul>
        @foreach(var item in Model)
        {
-           <li>Id: @item.Id Title: @item.Title Year:@item.Year</li>
+           <li> Title: @item.Title Year:@item.Year</li>
        }
     </ul>
 </body>

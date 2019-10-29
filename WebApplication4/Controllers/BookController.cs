@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebApplication4.Services;
+using WebApplication4.ViewModels;
 
 namespace WebApplication4.Controllers
 {
@@ -20,7 +21,12 @@ namespace WebApplication4.Controllers
         public IActionResult All()
         {
             var books = _bookService.GetAll();
-            return View(books);
+            var bookViewModels = books.Select(x => new BookViewModel()
+            {
+                Title = x.Title,
+                Year = x.Year
+            }).ToList();
+            return View(bookViewModels);
         }
     }
 }
